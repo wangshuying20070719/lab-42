@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Animation Work</title>
+    <style>
+        /* 全局样式：让动画元素居中，方便看效果 */
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        /* 动画元素：一个彩色方块，用来做无限旋转动画 */
+        .animated-box {
+            width: 200px;
+            height: 200px;
+            /* 线性渐变背景，符合CSS渐变要求，更美观 */
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+            /* 给方块加圆角，更精致 */
+            border-radius: 10px;
+            /* 绑定动画：动画名rotate，4秒一圈，匀速，无限循环 */
+            animation: rotate 4s linear infinite;
+        }
+
+        /* 定义旋转动画的关键帧（CSS动画的核心！） */
+        @keyframes rotate {
+            /* 动画起始状态：0度，不旋转 */
+            from {
+                transform: rotate(0deg);
+            }
+            /* 动画结束状态：360度，完整转一圈 */
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 动画元素：一个彩色方块，会无限旋转 -->
+    <div class="animated-box"></div>
+</body>
+</html>
